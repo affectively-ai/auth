@@ -1,0 +1,67 @@
+{
+  "name": "@affectively/auth",
+  "version": "0.1.0",
+  "description": "UCAN + ZK authorization - capability-based auth with zero-knowledge proofs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir dist --target bun && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --declaration --outDir dist",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@affectively/ucan": ">=0.1.0",
+    "@affectively/zk": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@affectively/ucan": {
+      "optional": true
+    },
+    "@affectively/zk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "aeon",
+    "flux",
+    "ucan",
+    "zk",
+    "authorization",
+    "capability",
+    "zero-knowledge",
+    "authentication",
+    "decentralized",
+    "web3"
+  ],
+  "author": "AFFECTIVELY <hello@affectively.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/affectively-ai/auth.git"
+  },
+  "homepage": "https://github.com/affectively-ai/auth#readme",
+  "bugs": {
+    "url": "https://github.com/affectively-ai/auth/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
